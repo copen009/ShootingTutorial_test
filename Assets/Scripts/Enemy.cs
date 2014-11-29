@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
 		string layerName = LayerMask.LayerToName (c.gameObject.layer);
 		
 		// レイヤー名がBullet (Player)以外の時は何も行わない
-		if (layerName != "Bullet(Player)") return;
+		if (layerName != "Bullet (Player)") return;
 		
 		// 弾の削除
 		Destroy(c.gameObject);

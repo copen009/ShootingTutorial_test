@@ -70,14 +70,14 @@ public class Player : MonoBehaviour
 		string layerName = LayerMask.LayerToName(c.gameObject.layer);
 		
 		// レイヤー名がBullet (Enemy)の時は弾を削除
-		if( layerName == "Bullet(Enemy)")
+		if( layerName == "Bullet (Enemy)")
 		{
 			// 弾の削除
 			Destroy(c.gameObject);
 		}
 		
 		// レイヤー名がBullet (Enemy)またはEnemyの場合は爆発
-		if( layerName == "Bullet(Enemy)" || layerName == "Enemy")
+		if( layerName == "Bullet (Enemy)" || layerName == "Enemy")
 		{
 			// 爆発する
 			spaceship.Explosion();
