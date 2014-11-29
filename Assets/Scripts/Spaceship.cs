@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-// Rigidbody2Dコンポーネントを必須にする
 [RequireComponent(typeof(Rigidbody2D))]
 public class Spaceship : MonoBehaviour
 {
@@ -12,8 +11,8 @@ public class Spaceship : MonoBehaviour
 	
 	// 弾のPrefab
 	public GameObject bullet;
-
-	//弾を撃つかどうか
+	
+	// 弾を撃つかどうか
 	public bool canShot;
 	
 	// 爆発のPrefab
@@ -23,17 +22,11 @@ public class Spaceship : MonoBehaviour
 	public void Explosion ()
 	{
 		Instantiate (explosion, transform.position, transform.rotation);
-	}	
+	}
 	
 	// 弾の作成
 	public void Shot (Transform origin)
 	{
 		Instantiate (bullet, origin.position, origin.rotation);
-	}
-	
-	// 機体の移動
-	public void Move (Vector2 direction)
-	{
-		rigidbody2D.velocity = direction * speed;
 	}
 }

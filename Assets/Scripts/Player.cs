@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
 			
 			// 弾をプレイヤーと同じ位置/角度で作成
 			spaceship.Shot (transform);
-
+			
 			// ショット音を鳴らす
 			audio.Play();
 			
@@ -35,14 +35,13 @@ public class Player : MonoBehaviour
 		// 移動する向きを求める
 		Vector2 direction = new Vector2 (x, y).normalized;
 		
-		// 移動
-		spaceship.Move (direction);
-
 		// 移動の制限
-		Clamp();
+		Move (direction);
+		
 	}
 	
-	void Clamp ()
+	// 機体の移動
+	void Move (Vector2 direction)
 	{
 		// 画面左下のワールド座標をビューポートから取得
 		Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
@@ -52,6 +51,9 @@ public class Player : MonoBehaviour
 		
 		// プレイヤーの座標を取得
 		Vector2 pos = transform.position;
+		
+		// 移動量を加える
+		pos += direction  * spaceship.speed * Time.deltaTime;
 		
 		// プレイヤーの位置が画面内に収まるように制限をかける
 		pos.x = Mathf.Clamp (pos.x, min.x, max.x);
