@@ -4,10 +4,10 @@ public class Bullet : MonoBehaviour
 {
 	// 弾の移動スピード
 	public int speed = 10;
-	
+
 	// ゲームオブジェクト生成から削除するまでの時間
-	public float lifeTime = 5;
-	
+	public float lifeTime = 1;
+
 	void Start ()
 	{
 		// ローカル座標のY軸方向に移動する

@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 		if (spaceship.canShot == false) {
 			yield break;
 		}
-		
+			
 		while (true) {
 			
 			// 子要素を全て取得する
@@ -35,13 +35,13 @@ public class Enemy : MonoBehaviour
 			yield return new WaitForSeconds (spaceship.shotDelay);
 		}
 	}
-	
+
 	// 機体の移動
 	public void Move (Vector2 direction)
 	{
 		rigidbody2D.velocity = direction * spaceship.speed;
 	}
-	
+
 	void OnTriggerEnter2D (Collider2D c)
 	{
 		// レイヤー名を取得
@@ -49,10 +49,10 @@ public class Enemy : MonoBehaviour
 		
 		// レイヤー名がBullet (Player)以外の時は何も行わない
 		if (layerName != "Bullet (Player)") return;
-		
+
 		// 弾の削除
 		Destroy(c.gameObject);
-		
+
 		// 爆発
 		spaceship.Explosion ();
 		

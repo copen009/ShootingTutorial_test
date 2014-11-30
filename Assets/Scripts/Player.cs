@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 		Move (direction);
 		
 	}
-	
+
 	// 機体の移動
 	void Move (Vector2 direction)
 	{
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
 		// 制限をかけた値をプレイヤーの位置とする
 		transform.position = pos;
 	}
-	
+
 	// ぶつかった瞬間に呼び出される
 	void OnTriggerEnter2D (Collider2D c)
 	{
@@ -75,13 +75,16 @@ public class Player : MonoBehaviour
 			// 弾の削除
 			Destroy(c.gameObject);
 		}
-		
+
 		// レイヤー名がBullet (Enemy)またはEnemyの場合は爆発
 		if( layerName == "Bullet (Enemy)" || layerName == "Enemy")
 		{
+			// Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
+			FindObjectOfType<Manager>().GameOver();
+			
 			// 爆発する
 			spaceship.Explosion();
-			
+		
 			// プレイヤーを削除
 			Destroy (gameObject);
 		}
