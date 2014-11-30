@@ -30,6 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!50 &5000000
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -67,8 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca46e3997c3764d38bce3807f7b1c4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  lifeTime: 5
+  speed: 1
+  lifeTime: 10
+  power: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -87,9 +89,8 @@ SpriteRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
   m_SortingLayerID: 0
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 9a0317eefd42740f0997b1c4587a47ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
