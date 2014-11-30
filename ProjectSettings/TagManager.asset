@@ -9,7 +9,7 @@ TagManager:
   Builtin Layer 2: Ignore Raycast
   Builtin Layer 3: 
   Builtin Layer 4: Water
-  Builtin Layer 5: 
+  Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
   User Layer 8: Player
@@ -48,4 +48,8 @@ TagManager:
   - name: Player
     userID: 2
     uniqueID: 979189183
+    locked: 0
+  - name: BlackScreen
+    userID: 3
+    uniqueID: 4022190697
     locked: 0
