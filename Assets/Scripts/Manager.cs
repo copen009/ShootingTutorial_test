@@ -14,10 +14,10 @@ public class Manager : MonoBehaviour
 		title = GameObject.Find ("Title");
 	}
 	
-	void OnGUI ()
+	void Update ()
 	{
-		// ゲーム中ではなく、タッチまたはマウスクリック直後であればtrueを返す。
-		if (IsPlaying () == false && Event.current.type == EventType.MouseDown) {
+		// ゲーム中ではなく、Xキーが押されたらtrueを返す。
+		if (IsPlaying () == false && Input.GetKeyDown (KeyCode.X)) {
 			GameStart ();
 		}
 	}
@@ -31,7 +31,9 @@ public class Manager : MonoBehaviour
 	
 	public void GameOver ()
 	{
-		FindObjectOfType<Score> ().Save ();
+		// ハイスコアの保存
+		FindObjectOfType<Score>().Save();
+		
 		// ゲームオーバー時に、タイトルを表示する
 		title.SetActive (true);
 	}
